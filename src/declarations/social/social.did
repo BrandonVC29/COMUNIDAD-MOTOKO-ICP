@@ -1,0 +1,10 @@
+type Like = 
+ record {
+   postId: text;
+   user: principal;
+ };
+service : {
+  createPost: (text) -> ();
+  getLikes: (text) -> (vec Like) query;
+  likePost: (text) -> (bool);
+}

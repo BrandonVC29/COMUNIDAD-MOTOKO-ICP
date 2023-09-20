@@ -1,0 +1,15 @@
+type Post = 
+ record {
+   creator: principal;
+   message: text;
+ };
+service : {
+  createPost: (text) -> ();
+  deletePost: (text) -> (bool);
+  getPost: (text) -> (opt Post) query;
+  getPosts: () -> (vec record {
+                         text;
+                         Post;
+                       }) query;
+  updatePost: (text, text) -> (bool);
+}
